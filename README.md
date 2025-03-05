@@ -1,4 +1,4 @@
-#Figure Skating APP
+# Figure Skating APP
 
 This APP will show the details of the figure skating moves based on the [Official USFSA Curriculum](https://skatingacademy.org/wp-content/uploads/Basic_Skills_Overview1.pdf)
 
