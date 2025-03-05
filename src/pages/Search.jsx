@@ -107,7 +107,8 @@ const Search = () => {
                 <p className="text-gray-600 mb-4">{move.description}</p>
                 
                 <Link 
-                  to={`/category/${move.categoryId}/level/${move.levelId}/move/${move.id}`}
+                  to={`/category/${move.categoryId}/level/${move.levelId}#move-${move.id}`}
+                  state={{ selectedMoveId: move.id }}
                   className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
                 >
                   View Details

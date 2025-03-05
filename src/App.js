@@ -16,7 +16,6 @@ import { AuthProvider } from './context/AuthContext';
 import './App.css';
 import './firebase/config';
 
-
 function App() {
   return (
     <AuthProvider>

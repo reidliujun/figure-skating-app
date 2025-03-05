@@ -1,14 +1,33 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { loadSkatingMoves } from '../utils/csvLoader';
 import { useCompletion } from '../context/CompletionContext';
 
 const LevelDetail = () => {
   const { categoryId, levelId } = useParams();
+  const location = useLocation();
+  const [expandedMoves, setExpandedMoves] = useState({});
   const [levelData, setLevelData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [expandedMoves, setExpandedMoves] = useState({});
-  const { completedMoves, toggleMoveCompletion, isMoveCompleted, isLoaded } = useCompletion();
+  const { toggleMoveCompletion, isMoveCompleted, isLoaded } = useCompletion();
+
+  // Keep this useEffect for hash navigation
+  useEffect(() => {
+    const moveId = location.hash.replace('#move-', '');
+    if (moveId) {
+      setExpandedMoves(prev => ({
+        ...prev,
+        [moveId]: true
+      }));
+
+      setTimeout(() => {
+        const element = document.getElementById(`move-${moveId}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   const toggleMoveExpansion = useCallback((moveId) => {
     setExpandedMoves(prev => ({
@@ -68,7 +87,7 @@ const LevelDetail = () => {
     );
   }
 
-  const { category, level } = levelData;
+  const { level } = levelData;
 
   return (
     <div className="container mx-auto p-4">
@@ -87,7 +106,9 @@ const LevelDetail = () => {
           const isExpanded = expandedMoves[move.id];
           
           return (
-            <div key={move.id} 
+            <div 
+              key={move.id}
+              id={`move-${move.id}`} // Add this id for scrolling
               className={`bg-white rounded-lg shadow-md overflow-hidden ${completed ? 'border-l-4 border-green-500' : ''}`}
             >
               <div className="p-6">
