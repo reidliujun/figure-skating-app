@@ -67,8 +67,6 @@ const CategoryDetail = () => {
         </Link>
       </div>
       
-      <h1 className="text-3xl font-bold mb-2">{categoryId}</h1>
-      
       <h2 className="text-2xl font-bold mb-4">Levels</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(categoryData.levels).map(([levelId, level]) => {
@@ -77,7 +75,9 @@ const CategoryDetail = () => {
           return (
             <div key={levelId} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{levelId}</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  {levelId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+                </h3>
                 <div className="mb-4">
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <div 
