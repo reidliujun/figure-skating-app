@@ -105,13 +105,7 @@ const Profile = () => {
               Basic Skills
             </Link>
             <Link 
-              to="/category/adult"
-              className="bg-purple-100 text-purple-800 p-4 rounded-lg text-center hover:bg-purple-200"
-            >
-              Adult Curriculum
-            </Link>
-            <Link 
-              to="/category/free"
+              to="/category/freetyle"
               className="bg-green-100 text-green-800 p-4 rounded-lg text-center hover:bg-green-200"
             >
               Free Skate

@@ -7,7 +7,7 @@ const skatingData = {
       levels: [] // Levels now loaded from CSV
     },
     {
-      id: 'free',
+      id: 'freesytle',
       name: 'Free Skate Curriculum',
       description: 'Free skating techniques',
       levels: [] // Levels now loaded from CSV
