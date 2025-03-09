@@ -15,6 +15,7 @@ import { CompletionProvider } from './context/CompletionContext';
 import { AuthProvider } from './context/AuthContext';
 import './App.css';
 import './firebase/config';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/test-firebase" element={<TestFirebase />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

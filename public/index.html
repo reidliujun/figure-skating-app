@@ -7,19 +7,41 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Figure Skating App - Learn figure skating moves and techniques"
+      content="Figure Skating App - Learn and track figure skating moves with the official USFSA curriculum. Explore basic skills, free skate techniques, and detailed move descriptions with video tutorials."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Structured data for better SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Figure Skating App",
+      "description": "Learn and track figure skating moves with the official USFSA curriculum",
+      "applicationCategory": "SportsApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4391206421055024"
      crossorigin="anonymous"></script>
     
-    <title>Figure Skating App</title>
+    <title>Figure Skating App - Learn and Track Skating Skills</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <h1>Figure Skating App</h1>
+        <p>You need to enable JavaScript to run this app.</p>
+        <p>This application helps figure skaters track their progress through different skating levels and moves.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <!-- The rest of the template remains unchanged -->
   </body>
